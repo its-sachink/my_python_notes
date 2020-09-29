@@ -1,0 +1,11 @@
+https://www.toptal.com/python/python-design-patterns
+https://www.geeksforgeeks.org/python-design-patterns/
+https://www.tutorialspoint.com/python_design_patterns/python_design_patterns_iterator.htm
+https://python-patterns.guide/      **
+https://refactoring.guru/design-patterns/creational-patterns    **
+https://stackabuse.com/design-patterns-in-python/   **
+https://realpython.com/factory-method-python/
+https://realpython.com/courses/
+https://medium.com/@vubon.roy/solid-principles-with-python-examples-10e1f3d91259 **
+https://github.com/heykarimoff/solid.python **
+https://medium.com/@dorela/s-o-l-i-d-principles-explained-in-python-with-examples-3332520b90ff
