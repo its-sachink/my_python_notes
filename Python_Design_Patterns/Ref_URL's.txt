@@ -9,3 +9,9 @@ https://realpython.com/courses/
 https://medium.com/@vubon.roy/solid-principles-with-python-examples-10e1f3d91259 **
 https://github.com/heykarimoff/solid.python **
 https://medium.com/@dorela/s-o-l-i-d-principles-explained-in-python-with-examples-3332520b90ff
+
+https://realpython.com/tutorials/devops/
+
+https://realpython.com/python-continuous-integration/
+
+https://realpython.com/python-boto3-aws-s3/
