@@ -1,8 +1,9 @@
-########## OOP's
+##### OOP's  
 
-		- Goal of OOP :  to encapsulate your code into logical, hierarchical groupings using classes so that you can reason about your code at a higher level.
+		- Goal of OOP :  to encapsulate your code into logical, hierarchical groupings using classes so that you can reason about your code at a higher level.      
 
-		- for example : A poker game can have following classes.
+		- for example : A poker game can have following classes.    
+		
 				- Game
 				- Player
 				- Card
@@ -11,22 +12,23 @@
 				- Chip
 				- Bet
 
-		- example : Deck {class} can have following attributes.
 
-			- _cards         {private list attribute}	: Actual cards in a deck
-			- _max_cards     {private int attribute}	: If you are having more than one deck
-			- shuffle        {public method}			: To shuffle the cards with in a deck
-			- deal_card      {public method}			: That will take just one card at the top
-			- deal_hand      {public method}			: Will take 2,3,5 cards and will return them
-			- count          {public method}			: How many cards are left in that deck
+		- example : Deck {class} can have following attributes.  
 
-		- private : Python does not support private or public explicitly. To make any thing private we need to append it with "_" char.
+			- _cards         {private list attribute}	: Actual cards in a deck  
+			- _max_cards     {private int attribute}	: If you are having more than one deck  
+			- shuffle        {public method}			: To shuffle the cards with in a deck  
+			- deal_card      {public method}			: That will take just one card at the top  
+			- deal_hand      {public method}			: Will take 2,3,5 cards and will return them   
+			- count          {public method}			: How many cards are left in that deck  
+
+		- private : Python does not support private or public explicitly. To make any thing private we need to append it with "_" char.  
 
 
-    ####### The "__init__" method
+#### The "__init__" method  
 
-		- Creating a Class : refer to init.py file.
-
+		- Creating a Class : refer to init.py file.  
+```python
 			class Vehicle:
 
 				def __init__(self, make, model, year):
@@ -48,9 +50,10 @@
 				>>> user1 = user("Sachin", "Kesarkar", 34)
 				Class with name SachinKesarkar has been initiated
 			--------------------------------------------------------
+```
 
-	###### Instance Methods
-
+#### Instance Methods  
+```python
         class User:
         	def __init__(self, first, last, age):
         		self.first = first
@@ -74,11 +77,12 @@
 
          print(user2.initials())
          print(user1.initials())
+```
 
+##### Class attributes  
 
-    ######## Class attributes
-
-        # Another class with a class attribute, used for validation purposes
+        # Another class with a class attribute, used for validation purposes  
+```python
         class Pet:
         	allowed = ['cat', 'dog', 'fish', 'rat']		# Class attribute, defining which animals species can be stored.
         
@@ -97,17 +101,16 @@
         
         cat = Pet("Blue", "cat")
         dog = Pet("Wyatt", "dog")
+```
 
+##### Class methods  
 
+    - Class methods are methods (with the @classmethod decorator) that are not concerned with instances, but the class itself.  
 
-    ######## Class methods
+    	- The first argument is cls (for class) instead of self. Like self, it does not need to be passed in explicitly.  
+		- Class methods are available on the class itself and any instances of the class, and are mostly used for building new instances of classes.  
 
-    - Class methods are methods (with the @classmethod decorator) that are not concerned with instances, but the class itself.
-
-    	- The first argument is cls (for class) instead of self. Like self, it does not need to be passed in explicitly.
-		- Class methods are available on the class itself and any instances of the class, and are mostly used for building new instances of classes.
-
-
+```python
             class User:
             	active_users = 0
 
@@ -136,12 +139,13 @@
     	    user1 = User("Joe", "Smith", 68)
             user2 = User("Blanca", "Lopez", 41)
             print(f"Active users are : {User.display_active_users()}")
+```
+
+#### OOP's part 2 :  
 
 
-######## OOP's part 2 :
-
-
-    ####### Simple Inheritance :
+    ####### Simple Inheritance :  
+    ```python
     class Person:
       def __init__(self, fname, lname):
         self.firstname = fname
@@ -162,10 +166,11 @@
 
     x = Student("Mike", "Olsen")
     x.printname()
+```
 
+#### All about properties, getter and setter methods :  
 
-    ####### All about properties, getter and setter methods :
-
+```python
             class Human:
             	def __init__(self, first, last, age):
             		self.first = first
@@ -200,10 +205,11 @@
 
             jane.age = 40	# Using the setter function.
             print(jane.age)
+```
 
+##### Multiple inheritance :  
 
-    ########### Multiple inheritance :
-
+```python
         class Aquatic:
           def __init__(self,name):
             print("AQUATIC INIT!")
@@ -234,10 +240,10 @@
           def __init__(self,name):
             print("PENGUIN INIT!")
             super().__init__(name=name)			# This calls Ambulatory __init__()
+```
 
 
-
-######## Iterators and Generators :
+##### Iterators and Generators :  
 
     - Iterators are objects that can be iterated upon.
     - Iterator in Python is simply an object that can be iterated upon. An object which will return data, one element at a time.
@@ -247,6 +253,7 @@
     - list, tuple, string etc. are iterables. The iter() function (which in turn calls the __iter__() method) returns an iterator from them.
 
      ----------------------------------------------------------
+     ```python
         # define a list
         my_list = [4, 7, 0, 3]
 
@@ -280,11 +287,13 @@
           File "<string>", line 24, in <module>
             next(my_iter)
         StopIteration
+	```
      -------------------------------------------------------------
 
-     Other way to iterate through is using "for" loop.
+     Other way to iterate through is using "for" loop.  
 
      -------------------------------------------------------------
+     ```python
         >>> for element in my_list:
         ...     print(element)
         ...
@@ -292,11 +301,13 @@
         7
         0
         3
+	```
      -------------------------------------------------------------
 
-     Or the other way is, iter_obj by calling iter() on the iterable.
+     Or the other way is, iter_obj by calling iter() on the iterable.  
 
      -------------------------------------------------------------
+     ```python
         # create an iterator object from that iterable
         iter_obj = iter(iterable)
 
@@ -309,21 +320,23 @@
             except StopIteration:
                 # if StopIteration is raised, break from loop
                 break
+	```
      -------------------------------------------------------------
 
 
 
-    ###### Building Custom Iterators :
+    ###### Building Custom Iterators :  
 
-    - To create an object/class as an iterator you have to implement the methods __iter__() and __next__() to your object.
-    - The __iter__() method acts similar, you can do operations (initializing etc.), but must always return the iterator object itself.
-    - The __next__() method also allows you to do operations, and must return the next item in the sequence.
+    - To create an object/class as an iterator you have to implement the methods __iter__() and __next__() to your object.  
+    - The __iter__() method acts similar, you can do operations (initializing etc.), but must always return the iterator object itself.  
+    - The __next__() method also allows you to do operations, and must return the next item in the sequence.  
 
-    - To prevent the iteration to go on forever, we can use the "StopIteration" statement.
+    - To prevent the iteration to go on forever, we can use the "StopIteration" statement.  
 
-    - Create an iterator that returns numbers, starting with 1, and each sequence will increase by one (returning 1,2,3,4,5 etc.):
+    - Create an iterator that returns numbers, starting with 1, and each sequence will increase by one (returning 1,2,3,4,5 etc.):  
 
-     -------------------------------------------------------------
+     -------------------------------------------------------------  
+     ```python
         class MyNumbers:
           def __iter__(self):
             self.a = 1
@@ -342,27 +355,29 @@
 
         for x in myiter:
           print(x)
+	```
      -------------------------------------------------------------
 
 
-     ######## Generators :
+     ######## Generators :  
 
-        - There is a lot of work in building an iterator in Python. We have to implement a class with __iter__() and __next__() method, keep track of internal states, and raise StopIteration when there are no values to be returned.
-        - Python generators are a simple way of creating iterators. All the work we mentioned above are automatically handled by generators in Python.
-        - a generator is a function that returns an object (iterator) which we can iterate over (one value at a time).
-
-
-        - If a function contains at least one yield statement (it may contain other yield or return statements), it becomes a generator function.
-        - The difference is that while a return statement terminates a function entirely, yield statement pauses the function saving all its states and later continues from there on successive calls.
+        - There is a lot of work in building an iterator in Python. We have to implement a class with __iter__() and __next__() method, keep track of internal states, and raise StopIteration when there are no values to be returned.  
+        - Python generators are a simple way of creating iterators. All the work we mentioned above are automatically handled by generators in Python.  
+        - a generator is a function that returns an object (iterator) which we can iterate over (one value at a time).  
 
 
-    - Differences between Generator function and Normal function :
-        - Generator function contains one or more yield statements.
-        - Once the function yields, the function is paused and the control is transferred to the caller.
-        - Local variables and their states are remembered between successive calls.
-        - Finally, when the function terminates, "StopIteration" is raised automatically on further calls.
+        - If a function contains at least one yield statement (it may contain other yield or return statements), it becomes a generator function.  
+        - The difference is that while a return statement terminates a function entirely, yield statement pauses the function saving all its states and later continues from there on successive calls.  
+  
 
-     -------------------------------------------------------------
+    - Differences between Generator function and Normal function :  
+        - Generator function contains one or more yield statements.  
+        - Once the function yields, the function is paused and the control is transferred to the caller.  
+        - Local variables and their states are remembered between successive calls.  
+        - Finally, when the function terminates, "StopIteration" is raised automatically on further calls.  
+
+     -------------------------------------------------------------  
+     ```python
         def rev_str(my_str):
             length = len(my_str)
             for i in range(length - 1, -1, -1):
@@ -379,15 +394,17 @@
         l
         e
         h
+	```
      -------------------------------------------------------------
 
-        ###### Python Generator Expression :
+        ###### Python Generator Expression :  
 
-        Similar to the lambda functions which create anonymous functions, generator expressions create anonymous generator functions.
-        The syntax for generator expression is similar to that of a list comprehension in Python. But the square brackets are replaced with round parentheses.
-        a list comprehension produces the entire list while the generator expression produces one item at a time.
+        Similar to the lambda functions which create anonymous functions, generator expressions create anonymous generator functions.  
+        The syntax for generator expression is similar to that of a list comprehension in Python. But the square brackets are replaced with round parentheses.  
+        a list comprehension produces the entire list while the generator expression produces one item at a time.  
 
-     -------------------------------------------------------------
+     -------------------------------------------------------------  
+     ```python
         # Initialize the list
         my_list = [1, 3, 6, 10]
 
@@ -413,18 +430,21 @@
         print(next(a))
 
         next(a)
-     -------------------------------------------------------------
+	```
+     -------------------------------------------------------------  
 
-        - Generator expressions can be used as function arguments. When used in such a way, the round parentheses can be dropped.
+        - Generator expressions can be used as function arguments. When used in such a way, the round parentheses can be dropped.  
 
-     -------------------------------------------------------------
+     -------------------------------------------------------------  
+     ```python
         >>> sum(x**2 for x in my_list)
         146
 
         >>> max(x**2 for x in my_list)
         100
+	```
      -------------------------------------------------------------
 
 
-########## Decorators remaining :
+########## Decorators remaining :  
 
