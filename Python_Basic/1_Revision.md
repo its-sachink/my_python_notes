@@ -1,7 +1,7 @@
 
-	- Two main types of numbers:
-		Integer : 4, -10
-		Floating Point : 6.1, 0.0, 1.3333
+- Two main types of numbers
+	- Integer : 4, -10
+	- Floating Point : 6.1, 0.0, 1.3333
 
 
 ### Variables and Strings
@@ -12,19 +12,16 @@
 		print(khaleesi_mother_of_dragons + x)
 		101
 ```
-		all, at, once = 5, 10, 15
 
-
-		1. Most variables should be snake_case (underscores between words)
-
-		2. Most variables should be also be lowercase, with some exceptions:
-			- CAPITAL_SNAKE_CASE usually refers to constants (e.g. PI = 3.14)
-			- UpperCamelCase usually refers to a class (more on that later)
-
-		3. Variables that start and end with two underscores (called "dunder" for double underscore) are supposed to be private or left alone.
+... all, at, once = 5, 10, 15
+- Most variables should be snake_case (underscores between words)
+- Most variables should be also be lowercase, with some exceptions:
+		- CAPITAL_SNAKE_CASE usually refers to constants (e.g. PI = 3.14)
+		- UpperCamelCase usually refers to a class (more on that later)
+- Variables that start and end with two underscores (called "dunder" for double underscore) are supposed to be private or left alone.
 			__no_touchy__
 
-
+```python
 		>>> is_active = True
 		>>> is_active
 		True
@@ -35,30 +32,43 @@
 		Traceback (most recent call last):
 		File "<stdin>", line 1, in <module>
 		NameError: name 'true' is not defined
-
-
-- Python is highly flexible about reassigning variables to different types:
+```
+  
+    
+- Python is highly flexible about reassigning variables to different types:  
+```python
 	awesomeness = True
 	print(awesomeness) # True
 	awesomeness = "a dog"
 	print(awesomeness) # a dog
 	awesomeness = None
 	print(awesomeness) # None, means NULL in python
+```
 
+<br/>
+<br/>
 Special Value "None", means NULL
 
+```python
 		>>> None
 		>>> none
 		Traceback (most recent call last):
 		File "<stdin>", line 1, in <module>
 		NameError: name 'none' is not defined
+```
+<br/>
+<br/>
 
-
-		- String literals in Python can be declared with either single or double quotes.
+- String literals in Python can be declared with either single or double quotes.  
+```python
 			my_other_str = 'a hat'
 			my_str = "a cat"
-		- Either one is perfectly fine; but make sure you stick to the same convention throughout the same file.
+```
+<br/>
+Either one is perfectly fine; but make sure you stick to the same convention throughout the same file.  
+<br/>  
 
+```python
 		new_line = "hello \n world"
 		print(new_line)
 		# hello
@@ -76,9 +86,15 @@ Special Value "None", means NULL
         Traceback (most recent call last):
             File "<stdin>", line 1, in <module>
         TypeError: unsupported operand type(s) for +: 'int' and 'str'
+```
 
-    ####### 10: Formatting Strings
+<br/>  
+<br/>  
 
+### 10: Formatting Strings
+
+
+```python
     	x = 10
     	formatted = f"I've told you {x} times already!"
 
@@ -93,9 +109,13 @@ Special Value "None", means NULL
         >>>
         >>> print(f"Your number is {number} which is int")
         Your number is 10 which is int
+```
 
-    --- String Interpolation
 
+-- String Interpolation  
+<br/>  
+
+```python
     >>> fruit = "banana"
     >>> ripeness = "unripe"
     >>> print("The {} is {}".format(fruit,ripeness))
@@ -146,9 +166,12 @@ Special Value "None", means NULL
     miles = float(kms)/1.60934
     miles = round(miles, 2)
     print(f"Your {kms}km ride was {miles}mi ")
+```
 
 
-######## Boolean and Conditional Logic
+######## Boolean and Conditional Logic  
+<br/>  
+```python
 
     print("What's your favorite color?")
     data = input()
@@ -181,9 +204,14 @@ Special Value "None", means NULL
     		print("You can't come in, little one! :(")
     else:
     	print("Please enter an age!")
+```
+<br/>  
 
 
-###### Looping in Python
+### Looping in Python
+<br/>  
+
+```python
 
 for letter in "coffee":
 	print(letter*10)
@@ -222,3 +250,4 @@ for time in range(times):
 	if time >= 3:
 		print("do you even listen anymore?")
 		break
+```
