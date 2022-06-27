@@ -1,6 +1,9 @@
-######### Lists
+### Lists  
 
-- Not necessary a list of homogenous items.
+
+- Not necessary a list of homogenous items.  
+
+```python
 
 	>>> demo_list = ["a", 1, 45, True, 6.777]
 
@@ -12,9 +15,10 @@
 	range(1, 10)
 	>>> list(r)
 	[1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
 
-
-- Accessing data in list
+- Accessing data in list  
+```python
 
 	friends = ["Ashley", "Matt", "Michael"]
 
@@ -42,9 +46,11 @@
     >>> while i < len(numbers):
     ...     print(numbers[i])
     ...     i += 1
+```
 
+- List methods : Append, Insert, Extend  
 
-- List methods : Append, Insert, Extend
+```python
 
         >>> data = [1, 2, 3]
 		>>> data.append("purple")
@@ -110,16 +116,18 @@
 		>>> names.reverse()
 		>>> names
 		['pablo', 'selena', 'colt', 'lena', 'arya', 'blue', 'colt']
+```
 
-
-	- join : Used to convert List to String using the " ".
+	- join : Used to convert List to String using the " ".  
+```python
 				>>> words = ["Coding", "is", "Fun"]
 				>>> words
 				['Coding', 'is', 'Fun']
 				>>> " ".join(words)
 				'Coding is Fun'
-
-    - Slices :
+```
+    - Slices :  
+```python
 
 			>>> colors
 			['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
@@ -175,9 +183,10 @@
 		    ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 		    >>> colors[1][::-1]
 		    'egnaro'
+```
 
-
-######## List Comprehensions
+######## List Comprehensions  
+```python
 
 		>>> numbers = [1,2,3,4,5]
 		>>> double_num = [num*2 for num in numbers]
@@ -217,8 +226,10 @@
 		>>> with_out_vowels_string
 		['T', 'h', 's', ' ', 's', ' ', 's', ' ', 'm', 'c', 'h', ' ', 'f', 'n']
 
+```
+   - Nested List :  
 
-   - Nested List :
+```python
 
 		>>> nested_list = [[1,2,3],[4,5,6,],[7,8,9]]
 		>>> nested_list
@@ -227,44 +238,51 @@
 		3
 		>>> nested_list[-1][2]
 		9
+```
 
-
-   - Iterating through the list.
+   - Iterating through the list.  
+```python
 		>>> for i in nested_list:
 		...     for j in i:
 		...             print(j)
 		...
+```
 
-
-   - Nested list comprehension.
+   - Nested list comprehension.  
+```python
 			>>> nested_list
 			[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 			>>> [[val for val in l] for l in nested_list]
 			[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 			>>> [[print(val) for val in l ] for l in nested_list]
-
-   - Generating the Lists using list comprehension.
+```
+   - Generating the Lists using list comprehension.  
+```python
 		>>> board = [[num for num in range(1,4)] for val in range(1,4)]
 		>>> board
 		[[1, 2, 3], [1, 2, 3], [1, 2, 3]]
 
 		>>> [["X" if num%2 != 0 else "O" for num in range(1,4)] for value in range(1,4)]
 		[['X', 'O', 'X'], ['X', 'O', 'X'], ['X', 'O', 'X']]
-
+```
 
 3) For all the numbers between 1 and 100(including 100), create a variable called answer, which contains a list with all the numbers
-that are divisible by 12. [12, 24, 36]
+that are divisible by 12. [12, 24, 36]  
+```python
 >>> answer =  [num for num in list(range(1,101)) if num % 12 == 0]
+```
 
-4) String not containing vowels.
+4) String not containing vowels.  
+```python
 >>> answer = [letter for letter in "amazing" if letter not in "aeiou"]
 >>> answer
 ['m', 'z', 'n', 'g']
+```
 
 
+### Dictionary  
 
-######## Dictionary
-
+```python
 		- example :
 			instructor = {
 				"name": "Colt",
@@ -324,9 +342,11 @@ that are divisible by 12. [12, 24, 36]
 		second['a'] = "Amazing"
 		second
 		{'a': 'Amazing', 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+```  
 
+### Dictionary Comprehensions  
 
-######## Dictionary Comprehensions
+```python
 
 		numbers = dict(first=1, second=2, third=3)
 		squared_numbers = {key: value ** 2 for key,value in numbers.items()}
@@ -338,12 +358,15 @@ that are divisible by 12. [12, 24, 36]
 		>>> num_list = [1,2,3,4]
 		>>> {num:("even" if num % 2 == 0 else "odd") for num in num_list}
 		{1: 'odd', 2: 'even', 3: 'odd', 4: 'even'}
+```
 
+### Tuples  
 
-######### Tuples
 
 Tuple : An ordered collection or grouping of items. Same as Lists but it is immutable. Which means it cannot be changed.
-Syntax : numbers = (1, 2 ,3 ,4)
+Syntax : numbers = (1, 2 ,3 ,4)  
+
+```python
 
 >>> alphabet = (1, 2, 3, 4)
 >>> alphabet
@@ -352,9 +375,11 @@ Syntax : numbers = (1, 2 ,3 ,4)
 1
 >>> alphabet[3]
 3
+```
 
+- We can use tuple as key in the dictionary.  
 
-- We can use tuple as key in the dictionary.
+```python
 
 >>> location = {
 ...     (35.68, 39.69): "Tokyo office",
@@ -382,17 +407,18 @@ age
 	>>> nums = (1,2,(3,4),5)
 	>>> nums
 	(1, 2, (3, 4), 5)
+```
 
-
-########## Sets
+########## Sets  
 
 - Sets are like formal mathematical sets.
 - Sets do not have duplicate values.
 - They are unordered. Thus cannot access items using the index.
 - Sets can be used if you need to keep track of a collection of elements, but don't care about ordering or duplicates.
 
-- Creating a sets.
+- Creating a sets.   
 
+```python
 		>>> s = set({1,2,3,4,5,5,5})	# Create sets using {} and .set() function.
 		>>>
 		>>> s1 = {1, 2, 3}				# Directly creating the sets.
@@ -402,24 +428,26 @@ age
 		>>>
 		>>> s1
 		{1, 2, 3}
-
-- Sets cannot be accessed using the indexes.
-
+```
+- Sets cannot be accessed using the indexes.  
+```python
 		>>> s[0]
 		Traceback (most recent call last):
 		  File "<stdin>", line 1, in <module>
 		TypeError: 'set' object does not support indexing
-
-- Sets are unordered.
-
+```
+- Sets are unordered.  
+```python
 		>>> s2 = {1, 2, 4, 'a', 'c'}
 		>>>
 		>>> s2
 		{'c', 2, 4, 'a', 1}
 		>>>
-
+```
 - Usecase for sets.
-	- In case if you want to remove the duplicate cities.
+	- In case if you want to remove the duplicate cities.  
+
+```python
 
 		>>> cities = ['Pune', 'Delhi', 'London', 'Pune', 'London']
 		>>>
@@ -428,9 +456,11 @@ age
 		>>> uniq_cities
 		{'Delhi', 'London', 'Pune'}
 		>>>
+```
 
+- Set Union and Intersection :  
 
-- Set Union and Intersection :
+```python
 
 		>>> math_student = {"Anushka", "Sachin", "Aradhana"}
 		>>> bio_student = {"Anushka", "Avadhoot"}
@@ -441,11 +471,13 @@ age
 		>>> math_student & bio_student
 		{'Anushka'}
 
-
+```
 
 ########### SET Comprehensions
 
-- a SET Comprehensions and Dictionary Comprehensions. We specify a ":" in the dictionary comprehensions.
+- a SET Comprehensions and Dictionary Comprehensions. We specify a ":" in the dictionary comprehensions.  
+
+```python
 
 		>>> {x*2 for x in range(1,10)}
 		{2, 4, 6, 8, 10, 12, 14, 16, 18}
@@ -453,9 +485,11 @@ age
 		>>> {x:x*2 for x in range(1,10)}
 		{1: 2, 2: 4, 3: 6, 4: 8, 5: 10, 6: 12, 7: 14, 8: 16, 9: 18}
 
+```
 
 - Check if a string contains all the vowels
 
+```python
 		>>> def all_vowels_in_string(string):
 		...     return len({ char for char in string if char in "aeiou"}) == 5
 		...
@@ -466,7 +500,7 @@ age
 		True
 		>>>
 
-
+```
 
 ########### Recap ###########
 - tuples are ordered collections of elements, they are immutable!
