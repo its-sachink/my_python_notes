@@ -6,11 +6,12 @@
 
 ####### Variables and Strings
 
+```python
 		x = 100
 		khaleesi_mother_of_dragons = 1
 		print(khaleesi_mother_of_dragons + x)
 		101
-
+```
 		all, at, once = 5, 10, 15
 
 
