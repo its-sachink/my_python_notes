@@ -4,7 +4,7 @@
 		Floating Point : 6.1, 0.0, 1.3333
 
 
-####### Variables and Strings
+### Variables and Strings
 
 ```python
 		x = 100
