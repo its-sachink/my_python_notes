@@ -1,4 +1,8 @@
-########### Functions :
+### Functions :
+
+<br/>  
+
+```python
 
 	>>> def square_of_7():
 	...     return 7**2
@@ -21,22 +25,27 @@
 	>>> total=sum_odd_numbers([1,2,3,4,5,6])
 	>>> total
 	9
+```
 
-
-	#### Default Parameters
+#### Default Parameters  
 
     - Make sure the default parameter either go at the end, or every other single parameter has a default value.
-	- We can't have the default parameter at the begining.
+	- We can't have the default parameter at the begining.  
 
+
+```python
 	>>> def exponent(num, power=2):
 	...     return num**power
 	...
 	>>> exponent(2,3)
 	8
+```  
+<br/>
 
 	- What can default parameters be : Anything! Functions, lists, dictionaries, strings, booleans.
-	- Function as a default parameters.
+	- Function as a default parameters.  
 
+```python
 		>>> def add(a, b):
 		...     return a+b
 		...
@@ -48,18 +57,19 @@
 		>>> math(3,2,substract)
 		1
 		>>>
+```
 
+#### Keyword Arguments
 
-	#### Keyword Arguments
-
-	- Here you will have to specify all the arguments values.
+	- Here you will have to specify all the arguments values.  
 
 	- It is different from the default parameters.
     	- When you define a function and use an "=", you are setting a default parameter.
-		- When you invoke a fucntion and use an "=", you are making a keywork argument.
+		- When you invoke a fucntion and use an "=", you are making a keywork argument.  
 
-    - The ordering does not matter here.
+    - The ordering does not matter here.  
 
+```python
 			>>> def full_name(first, last):
 			...     return "Your name is {first} {last}"
 			...
@@ -69,20 +79,23 @@
 			>>>
 			>>> full_name(last="Kesarkar", first="Sachin")
 			'Your name is {first} {last}'
+```  
 
-	- You can specify the Keyword arguments even when you have specified the default parameters.
+	- You can specify the Keyword arguments even when you have specified the default parameters.  
+```python
 
 		>>> def exponent(num, power=2):
 		...     return num**power
 		...
 		>>> exponent(power=3,num=2)
 		8
+```  
 
-	#### Scope of variable
+#### Scope of variable  
 
 	- global : Variable not defined in a function is a global variable. we cannot directly access the global variables
-	inside the function directly.
-
+	inside the function directly.  
+```python
 			>>> total = 0
 			>>> def increment():
 			...     global total
@@ -91,13 +104,15 @@
 			...
 			>>> increment()
 			1
-
-    - "nonlocal" : This is basically used in a nested functions.
+```  
+    - "nonlocal" : This is basically used in a nested functions.  
 		The nonlocal keyword is used to work with variables inside nested functions, where the variable should not
-		belong to the inner function.
+		belong to the inner function.  
 
-        Use the keyword nonlocal to declare that the variable is not local to the inner function.
+        Use the keyword nonlocal to declare that the variable is not local to the inner function.  
 
+
+```python
             >>> def myfunc():
             ...     name = "outer variable"
             ...     def innerfunc():
@@ -110,24 +125,29 @@
             >>> value = myfunc()
             >>> print(value)
             still outer variable
+```
 
-    #### Documenting a function
+#### Documenting a function  
 
+```python
 			>>> def say_hello():
 			...     """ A simple function that returns the string hello"""
 			...     return "Hello !"
 			...
 			>>> say_hello.__doc__
 			' A simple function that returns the string hello'
+```
+
+#### *args :  
 
 
-	#### *args :
 
 	- *args : If you do not know how many arguments that will be passed into your function.
 	        Add a * before the parameter name in the function definition.
             This way the function will receive a tuple of arguments, and can access the items accordingly:
-		- Gathers remaining arguments as a tuple after *.
+		- Gathers remaining arguments as a tuple after *.  
 
+```python
         >>> def sum_all_values(*args):
         ... 	print(args)
         ...
@@ -142,10 +162,12 @@
         ...     for num in args:
         ...         total += num
         ...     return total
+```
 
         - Passing individual argument along with *args
 
-	- We can also pass our individual arguments along with the *args.
+	- We can also pass our individual arguments along with the *args.  
+```python
 		>>> def sum_all_nums(num1, *args):
 			total = 0
 			for num in args:
@@ -154,12 +176,14 @@
 
 		>>> print(sum_all_nums(10,5,2))		# Here first num 10 will be assigned to "num1".
 		>>> 7
+```
+
+#### 2 : **kwargs (keyword args)  
 
 
-	###### 2 : **kwargs (keyword args)
+	- **kwargs : Gathers remaining keyword arguments as a dictionary.  
 
-	- **kwargs : Gathers remaining keyword arguments as a dictionary.
-
+```python
 		>>> def fav_colors(**kwargs):
 			print(kwargs)
 			for person, color in kwargs.items():
@@ -171,16 +195,17 @@
 		sachin favorite color is orange
 		chimbu favorite color is purple
 		aradhana favorite color is red
+```
 
-
-	###### 3 : Ordering Parameters.
+##### 3 : Ordering Parameters.
 
 	- There is a order we have to follow in a function declaration as below.
 		1) parameters
 		2) *args
 		3) default parameters
-		4) **kwargs
+		4) **kwargs  
 
+```python
     >>> def display_info(a,b,*args, sachin="orange", **kwargs):
     ...     return [a,b,args,sachin,kwargs]
     ...
@@ -191,9 +216,9 @@
     	*args - (4,5,6) - It puts extra comma to identify it as a tuple.
     	default parameters - instructor="Sachin"
     	kwargs - {'aradhana': 'red', 'pinchu': 'pink'}
+```
 
-
-    ###### 4 : Tuple unpacking.
+##### 4 : Tuple unpacking.
 
 	- Using * as an Argument : Argument unpacking.
 		- We can use * as an argument to a function to "unpack" values.
@@ -203,6 +228,7 @@
 	- Same issue we get for the tuple of items.
 	- Thus we will have to unpack the List/tuple using the * operator as below.
 
+```python
         >>> def sum_all_values(*args):
         ... 	print(args)
         ...
@@ -212,20 +238,23 @@
         >>> numbers = (1,2,3,4,5,6,)
         >>> sum_all_values(numbers)
         ((1, 2, 3, 4, 5, 6),)
+```
 
-    - After unpacking them
+    - After unpacking them  
 
+```python
         >>> sum_all_values(*nums)
         (1, 2, 3, 4, 5, 6)
         >>> sum_all_values(*numbers)
         (1, 2, 3, 4, 5, 6)
+```
 
 
+#### 5 : Dictionary unpacking.  
 
-    ###### 5 : Dictionary unpacking.
+		- Using ** as an Argument : Dictionary unpacking.  
 
-		- Using ** as an Argument : Dictionary unpacking.
-
+```python
 				>>> def display_names(first, second):
 					print(f"{first}")
 					print(f"{second}")
@@ -244,8 +273,11 @@
 				Sachin
 				Chimbu
 				Sachin says hello to Chimbu
+```  
 
-        - Another Example :
+ - Another Example :  
+
+```python
 
 				>>> def add_and_multiple_numbers(a,b,c,**kwargs):
 					print(a + b * c)
@@ -259,11 +291,12 @@
 				OTHER STUFF ....
 				{'d': 55, 'name': 'Sachin'}
 
+```
+##### Lambda :  
 
-    ###### Lambda :
+    - Its very similar to Anonymous functions. Writing a one line of functions.  
 
-    - Its very similar to Anonymous functions. Writing a one line of functions.
-
+```python
 		>>> ##### Here is lambda function #####
 		>>> square2 = lambda num: num * num
 		>>> add = lambda a, b: a + b			#### a, b are the paramters and the return value is "a + b"
@@ -272,15 +305,16 @@
 		49
 		>>> print(add(3,10))
 		13
+```
+
+#### Map :  
+
+	- A standard built-in function called "map" that accepts at least 2 arguments, a function and an "iterable".  
+		- iterable : something that can be iterated over (lists, strings, dictionaries, sets, tuples).  
+		- It maps a function to each elements of a iterable.  
 
 
-	###### Map :
-
-	- A standard built-in function called "map" that accepts at least 2 arguments, a function and an "iterable".
-		- iterable : something that can be iterated over (lists, strings, dictionaries, sets, tuples)
-		- It maps a function to each elements of a iterable.
-
-
+```python
 				>>> nums = [1,2,3,4,5]
 				>>> nums
 				[1, 2, 3, 4, 5]
@@ -309,17 +343,18 @@
 				>>> peeps = map( lambda name: name.upper(), people)
 				>>> list(peeps)
 				['DARCY', 'CHRISTINA', 'DANA', 'ANNABEL']
+```
 
 
+#### Filters :  
 
-	###### Filters :
+	- There is a lambda for each value in iterable.  
+	- Returns filter object which can be converted into other iterables.  
+	- The object contains only the values that return True to the lambda.  
 
-	- There is a lambda for each value in iterable.
-	- Returns filter object which can be converted into other iterables.
-	- The object contains only the values that return True to the lambda.
+	- Example :  
 
-	- Example :
-
+```python
 		>>> l = [1,2,3,4,5,6,7,8,9,10]
 		>>> evens = list(filter(lambda x:x%2 == 0,l))
 		>>> evens
@@ -334,13 +369,15 @@
 		>>> list(a_names)
 		['austin', 'anthony', 'angel']
 		>>>
+```
+
+#### Sorted :  
+
+	- Can work with any iterable item.  
+	- It returns a copy but does not change the contents.  
 
 
-	####### Sorted :
-
-	- Can work with any iterable item.
-	- It returns a copy but does not change the contents.
-
+```python
 		>>> nums = [4,6,2,30,55,24]
 		>>> sorted(nums)
 		[2, 4, 6, 24, 30, 55]
@@ -353,9 +390,11 @@
 		>>> nums.sort()
 		>>> nums
 		[2, 4, 6, 24, 30, 55]
+```
 
+##### Min, Max, Reverse  
 
-	######## Min, Max, Reverse
+```python
 
     	names = ['Arya', "Samson", "Dora", "Tim", "Ollivander"]
 
@@ -366,9 +405,10 @@
     	# find the longest name itself
     	max(names, key=lambda n:len(n))
     	>> Ollivander
+```
+- It Return a reverse iterator.  
 
-    - It Return a reverse iterator.
-
+```python
     	>>> nums = [1,2,3,4]
     	>>> nums.reverse()
     	>>> nums
@@ -378,24 +418,28 @@
     	>>> [char for char in reversed("hello world")]
     	['d', 'l', 'r', 'o', 'w', ' ', 'o', 'l', 'l', 'e', 'h']
 
+```
 
+#### Len()  
 
-    ###### Len()
+		- len() : Return the lenght(the number of items) of an object. The argument may be a sequence(such as a string, tuple, list, or range) or a collection(dictionary, set).  
 
-		- len() : Return the lenght(the number of items) of an object. The argument may be a sequence(such as a string, tuple, list, or range) or a collection(dictionary, set).
-
+```python
 			>>> len('Hi how are you ?')
 			16
 			>>> len({"s":100, "r":0})
 			2
-
-		- How the lenght is calculated : There is BIF called "__len__()" which takes care of returning the len().
+```
+		- How the lenght is calculated : There is BIF called "__len__()" which takes care of returning the len().  
+		```python
 			>>> [1,2,3].__len__()
 			3
 			>>> len([1,2,3])
 			3
+```  
 
-	- We can actually override this function, to write our own version of "len" for that object.
+	- We can actually override this function, to write our own version of "len" for that object.  
+```python
 			class SpecialList:
 
 				def __init__(self, data):
@@ -412,8 +456,8 @@
 			>> 50
 			print(len(l2)) #50
 			>> 50
+```
 
+#### Exceptions : remaining
 
-####### Exceptions : remaining
-
-####### Modules : remaining
+#### Modules : remaining
