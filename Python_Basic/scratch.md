@@ -1,6 +1,7 @@
-# you can write to stdout for debugging purposes, e.g.
-# print("this is a debug message")
+# you can write to stdout for debugging purposes, e.g.  
+# print("this is a debug message")  
 
+```python
 def insert_five(position, number):
     str_number = str(number)
     insert_five_number = " ".join(str_number)
@@ -19,3 +20,4 @@ def solution(N):
             max = tmp_max
 
     return max
+```
