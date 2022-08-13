@@ -293,7 +293,10 @@ that are divisible by 12. [12, 24, 36]
 				44: "my favorite number!"
 			}
 
-		- another_dictionary = dict(key1 = 'value1', key2 = 'value2')
+		another_dictionary = dict(key1 = 'value1', key2 = 'value2')
+		my_dict = {}
+		another_dict = dict()
+		my_other_dict = {"one":1, "two":2, "three":3}
 
     instructor["name"] # "Colt"
 
@@ -338,10 +341,20 @@ that are divisible by 12. [12, 24, 36]
 		d.popitem() # ('d', 4)
 		d.popitem('a') # TypeError: popitem() takes no arguments (1 given)
 
-		second # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+		second = {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
 		second['a'] = "Amazing"
 		second
 		{'a': 'Amazing', 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+		
+		
+		my_dict = {"name":"Mike", "address":"123 Happy Way"}
+		print("name" in my_dict) # True
+		print ("state" in my_dict) # False
+		
+		my_dict = {"name":"Mike", "address":"123 Happy Way"}
+		print(my_dict.keys()) # dict_keys(['name', 'address'])
+		
+		
 ```  
 
 ### Dictionary Comprehensions  
@@ -367,6 +380,16 @@ Tuple : An ordered collection or grouping of items. Same as Lists but it is immu
 Syntax : numbers = (1, 2 ,3 ,4)  
 
 ```python
+
+>>> my_tuple = (1, 2, 3, 4, 5)
+>>> print(my_tuple[0:3]) # (1, 2, 3)
+
+>>> another_tuple = tuple()
+
+>>> abc = tuple([1, 2, 3])
+>>> print(abc)
+
+
 
 >>> alphabet = (1, 2, 3, 4)
 >>> alphabet
@@ -407,6 +430,13 @@ age
 	>>> nums = (1,2,(3,4),5)
 	>>> nums
 	(1, 2, (3, 4), 5)
+	
+	
+- Turn Tuple into the List :
+abc = tuple([1, 2, 3])
+abc_list = list(abc)
+print(abc_list)
+
 ```
 
 ########## Sets  
